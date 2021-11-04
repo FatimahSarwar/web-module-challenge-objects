@@ -48,8 +48,15 @@ const burger = {
   name: "Burger", 
   price: 18, 
   category: "Lunch", 
-  
-}
+  discount: function(string){
+    if (string === 'teacher' || string === 'student'){
+     return burger.price - (burger.price * .25)
+    } else if (string === 'public'){
+      return burger.price - (burger.price * .10)
+    }
+    }
+  }
+console.log(burger.discount('public'))
 
 
 
